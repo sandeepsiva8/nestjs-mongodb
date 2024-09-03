@@ -17,7 +17,6 @@ const common_1 = require("@nestjs/common");
 const create_employee_dto_1 = require("../../dto/create-employee.dto");
 const update_employee_dto_1 = require("../../dto/update-employee.dto");
 const employee_service_1 = require("../../service/employee/employee.service");
-const passport_1 = require("@nestjs/passport");
 let EmployeeController = class EmployeeController {
     constructor(employeeService) {
         this.employeeService = employeeService;
@@ -133,7 +132,6 @@ __decorate([
 ], EmployeeController.prototype, "deleteEmployee", null);
 EmployeeController = __decorate([
     (0, common_1.Controller)('employee'),
-    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
     __metadata("design:paramtypes", [employee_service_1.EmployeeService])
 ], EmployeeController);
 exports.EmployeeController = EmployeeController;

@@ -3,7 +3,6 @@ import {
   Injectable,
   NotFoundException,
   BadRequestException,
-  Inject,
   Logger,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
@@ -17,7 +16,7 @@ import { CacheService } from 'src/cache/cache.service';
 export class EmployeeService {
   constructor(
     @InjectModel('Employee') private readonly employeeModel: Model<Employee>,
-    @Inject(Logger) private readonly logger: Logger, // Injecting the winston logger
+    private readonly logger: Logger, // Injecting the logger
     private readonly cacheService: CacheService, // Injecting CacheService
   ) {}
 

@@ -8,13 +8,15 @@ import {
   Post,
   Put,
   Res,
+  UseGuards,
 } from '@nestjs/common';
 import { CreateEmployeeDto } from 'src/dto/create-employee.dto';
 import { UpdateEmployeeDto } from 'src/dto/update-employee.dto';
-import { EmployeeService } from 'src/service/employee/employee.service';
-
+import { EmployeeService } from 'src/service/employee/employee.service'
+import { AuthGuard } from '@nestjs/passport';
 @Controller('employee')
-export class employeeController {
+@UseGuards(AuthGuard('jwt')) // protect all routes with JWT guard
+export class EmployeeController {
   constructor(private readonly employeeService: EmployeeService) {}
 
   @Post()

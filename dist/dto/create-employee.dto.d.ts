@@ -7,6 +7,6 @@ export declare class CreateEmployeeDto {
     readonly gender: string;
     readonly education: string;
     readonly company: string;
-    readonly experience: string;
-    readonly salary: string;
+    readonly experience: number;
+    readonly salary: number;
 }

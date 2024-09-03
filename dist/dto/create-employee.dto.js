@@ -15,6 +15,7 @@ class CreateEmployeeDto {
 }
 __decorate([
     (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateEmployeeDto.prototype, "employeeId", void 0);
 __decorate([
@@ -31,43 +32,39 @@ __decorate([
 ], CreateEmployeeDto.prototype, "lastName", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.MaxLength)(30),
+    (0, class_validator_1.MaxLength)(100),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateEmployeeDto.prototype, "email", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.MaxLength)(30),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateEmployeeDto.prototype, "dob", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.MaxLength)(30),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateEmployeeDto.prototype, "gender", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.MaxLength)(30),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateEmployeeDto.prototype, "education", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.MaxLength)(30),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateEmployeeDto.prototype, "company", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], CreateEmployeeDto.prototype, "experience", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], CreateEmployeeDto.prototype, "salary", void 0);
 exports.CreateEmployeeDto = CreateEmployeeDto;
 //# sourceMappingURL=create-employee.dto.js.map

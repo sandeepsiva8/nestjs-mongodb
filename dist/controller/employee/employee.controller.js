@@ -12,12 +12,13 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.employeeController = void 0;
+exports.EmployeeController = void 0;
 const common_1 = require("@nestjs/common");
 const create_employee_dto_1 = require("../../dto/create-employee.dto");
 const update_employee_dto_1 = require("../../dto/update-employee.dto");
 const employee_service_1 = require("../../service/employee/employee.service");
-let employeeController = class employeeController {
+const passport_1 = require("@nestjs/passport");
+let EmployeeController = class EmployeeController {
     constructor(employeeService) {
         this.employeeService = employeeService;
     }
@@ -97,7 +98,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, create_employee_dto_1.CreateEmployeeDto]),
     __metadata("design:returntype", Promise)
-], employeeController.prototype, "createEmployee", null);
+], EmployeeController.prototype, "createEmployee", null);
 __decorate([
     (0, common_1.Put)('/:id'),
     __param(0, (0, common_1.Res)()),
@@ -106,14 +107,14 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, String, update_employee_dto_1.UpdateEmployeeDto]),
     __metadata("design:returntype", Promise)
-], employeeController.prototype, "updateEmployee", null);
+], EmployeeController.prototype, "updateEmployee", null);
 __decorate([
     (0, common_1.Get)(),
     __param(0, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], employeeController.prototype, "getEmployees", null);
+], EmployeeController.prototype, "getEmployees", null);
 __decorate([
     (0, common_1.Get)('/:id'),
     __param(0, (0, common_1.Res)()),
@@ -121,7 +122,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, String]),
     __metadata("design:returntype", Promise)
-], employeeController.prototype, "getEmployee", null);
+], EmployeeController.prototype, "getEmployee", null);
 __decorate([
     (0, common_1.Delete)('/:id'),
     __param(0, (0, common_1.Res)()),
@@ -129,10 +130,11 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, String]),
     __metadata("design:returntype", Promise)
-], employeeController.prototype, "deleteEmployee", null);
-employeeController = __decorate([
+], EmployeeController.prototype, "deleteEmployee", null);
+EmployeeController = __decorate([
     (0, common_1.Controller)('employee'),
+    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
     __metadata("design:paramtypes", [employee_service_1.EmployeeService])
-], employeeController);
-exports.employeeController = employeeController;
+], EmployeeController);
+exports.EmployeeController = EmployeeController;
 //# sourceMappingURL=employee.controller.js.map

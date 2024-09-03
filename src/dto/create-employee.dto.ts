@@ -1,7 +1,9 @@
+// src/dto/create-employee.dto.ts
 import { IsNotEmpty, IsNumber, IsString, MaxLength } from 'class-validator';
 
 export class CreateEmployeeDto {
   @IsString()
+  @IsNotEmpty()
   readonly employeeId: string;
 
   @IsString()
@@ -15,35 +17,31 @@ export class CreateEmployeeDto {
   readonly lastName: string;
 
   @IsString()
-  @MaxLength(30)
+  @MaxLength(100)
   @IsNotEmpty()
   readonly email: string;
 
   @IsString()
-  @MaxLength(30)
   @IsNotEmpty()
   readonly dob: string;
 
   @IsString()
-  @MaxLength(30)
   @IsNotEmpty()
   readonly gender: string;
 
   @IsString()
-  @MaxLength(30)
   @IsNotEmpty()
   readonly education: string;
 
   @IsString()
-  @MaxLength(30)
   @IsNotEmpty()
   readonly company: string;
 
   @IsNumber()
   @IsNotEmpty()
-  readonly experience: string;
+  readonly experience: number;
 
   @IsNumber()
   @IsNotEmpty()
-  readonly salary: string;
+  readonly salary: number;
 }

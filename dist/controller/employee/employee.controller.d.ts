@@ -1,7 +1,7 @@
 import { CreateEmployeeDto } from 'src/dto/create-employee.dto';
 import { UpdateEmployeeDto } from 'src/dto/update-employee.dto';
 import { EmployeeService } from 'src/service/employee/employee.service';
-export declare class employeeController {
+export declare class EmployeeController {
     private readonly employeeService;
     constructor(employeeService: EmployeeService);
     createEmployee(response: any, createEmployeeDto: CreateEmployeeDto): Promise<any>;
